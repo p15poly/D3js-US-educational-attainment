@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<script>
+function play() {
+    var audio = document.getElementById("audio");
+    audio.play();
+}
+</script>
+<!-- Audio origin: http://soundbible.com/1705-Click2.html -->
+<!-- "Click2" sound by Sebastian -->
+<audio id="audio" src="./assets/other/click.mp3"></audio>
+	
 <head>
     <meta charset="UTF-8">
     <title>Educational Attainment in the United States</title>
@@ -11,10 +21,10 @@
   <header>
        <nav>
     <ul>
-      <li><a href="#top" >Top</a></li>
-      <li><a href="#national">National</a></li>
-      <li><a href="#regional">Regional</a></li>
-      <li><a href="#state">State-Level</a></li>
+      <li onclick="play()"><a href="#top" >Top</a></li>
+      <li onclick="play()"><a href="#national">National</a></li>
+      <li onclick="play()"><a href="#regional">Regional</a></li>
+      <li onclick="play()"><a href="#state">State-Level</a></li>
     <ul>
         </nav>
     </header>
