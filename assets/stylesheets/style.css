@@ -81,7 +81,7 @@ text{
 
 label{
   font-family: "Muli", "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !IMPORTANT;
-     border-radius: 5px !IMPORTANT;
+     border-radius: 40px 40px 0px 0px !IMPORTANT;
 }
 
 .radio-toolbar input[type="radio"] {
@@ -92,15 +92,18 @@ label{
 .radio-toolbar label {
 
   display: inline-block;
-  background-color: #ddd;
-  padding: 4px 11px;
+  background-color: rgb(247, 175, 114);
+  color: #fff;
+  padding: 5px 26px;
   font-family: "Muli";
   font-size: 16px;
   cursor: pointer;
 }
 
 .radio-toolbar input[type="radio"]:checked+label {
-  background-color: #bbb;
+  background-color: rgb(255, 155, 66);
+  color: #fff;
+  font-weight: bold;
 }
 
 
@@ -255,7 +258,7 @@ form {
 	  max-width: 100%;
 	  overflow:auto;
     margin: 50px;
-        margin-top: 20px;
+        margin-top: 2px;
 	}
 	text {
 	  pointer-events: none;
