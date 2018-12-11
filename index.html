@@ -12,54 +12,54 @@
        <nav>
     <ul>
       <li onclick="play()"><a href="#top" >Top</a></li>
-      <li onclick="play()"><a href="#national">National</a></li>
-      <li onclick="play()"><a href="#regional">Regional</a></li>
-      <li onclick="play()"><a href="#state">State-Level</a></li>
+      <li onmouseover="play(); showThis('nationwide');"><a href="#national">National</a></li>
+      <li onmouseover="play(); showThis('regionlevel');"><a href="#regional">Regional</a></li>
+      <li onmouseover="play(); showThis('statelevel');"><a href="#state">State-Level</a></li>
     <ul>
         </nav>
     </header>
 <body>
-    <a name="national"></a>
     <h1 class="title" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Educational Attainment in the United States</h1>
         
-	
-	<p><br></p>
-    <h2 class="subtitle" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Nation-Wide Education Level of Population in Schooling</h2>
-	
-    <svg id="pie-chart" width="960" height="450"></svg><a name="regional"></a>
-    <p><br><br><br></p>
-    <h2 class="subtitle" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Educational Attainment: Region-level Breakdown of University Students</h2>
-	
-    <form id="tree-form">
-        <div class="radio-toolbar">
-            <input type="radio" id="mode1" name="treeSum" value="number" checked>
-            <label for="mode1" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Pursuing a Masters degree (in # of students)</label>
-            <input type="radio" id="mode2" name="treeSum" value="percent">
-            <label for="mode2" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Pursuing a Masters degree (in %)</label>
-            <input type="radio" id="mode3" name="treeSum" value="male">
-            <label for="mode3" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Males in College (18-24yrs)(in %)</label>
-            <input type="radio" id="mode4" name="treeSum" value="femal">
-            <label for="mode4" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Females in College (18-24yrs) (in %)</label>
-        </div>
-    </form>
-	<!--<p></p>-->
-    <div id="chart"></div>
-	<a name="state"></a>
-    <p><br><br></p>
-    <h2 class="subtitle" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Education Level of Population in Schooling: State-level Breakdown</h2>
-	
-    <form id="stack-form">
-        <div class="radio-toolbar">
-            <input type="radio" id="radio1" name="mode" value="bypercent" checked>
-            <label for="radio1" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Students (in %)</label>
-            <input type="radio" id="radio2" name="mode" value="bycount">
-            <label for="radio2" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Students (in number of people)</label>
-    </div>
-    </form>
-    <div>
-        <svg id="stacked-bar-chart"></svg>
+    <a name="national"></a>
+    <div id="nationwide" class="hidden">
+        <h2 class="subtitle" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Nation-Wide Education Level of Population in Schooling</h2>
+        <svg id="pie-chart" width="960" height="450"></svg>
     </div>
 
+    <a name="regional"></a>
+    <div id="regionlevel" class="hidden">
+        <h2 class="subtitle" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Educational Attainment: Region-level Breakdown of University Students</h2>
+        <form id="tree-form">
+            <div class="radio-toolbar">
+                <input type="radio" id="mode1" name="treeSum" value="number" checked>
+                <label for="mode1" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Pursuing a Masters degree (in # of students)</label>
+                <input type="radio" id="mode2" name="treeSum" value="percent">
+                <label for="mode2" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Pursuing a Masters degree (in %)</label>
+                <input type="radio" id="mode3" name="treeSum" value="male">
+                <label for="mode3" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Males in College (18-24yrs)(in %)</label>
+                <input type="radio" id="mode4" name="treeSum" value="femal">
+                <label for="mode4" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Females in College (18-24yrs) (in %)</label>
+            </div>
+        </form>
+        <div id="chart"></div>
+    </div>	
+	
+    <a name="state"></a>
+    <div id="statelevel" class="hidden">
+        <h2 class="subtitle" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Education Level of Population in Schooling: State-level Breakdown</h2>
+        <form id="stack-form">
+            <div class="radio-toolbar">
+                <input type="radio" id="radio1" name="mode" value="bypercent" checked>
+                <label for="radio1" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Students (in %)</label>
+                <input type="radio" id="radio2" name="mode" value="bycount">
+                <label for="radio2" onmouseover="responsiveVoice.speak(this.textContent)" onmouseout="responsiveVoice.cancel()">Students (in number of people)</label>
+            </div>
+        </form>
+        <div>
+            <svg id="stacked-bar-chart"></svg>
+        </div>
+    </div>
     
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
@@ -86,6 +86,17 @@
 function play() {
     var audio = document.getElementById("audio");
     audio.play();
+}
+	
+function showThis(id) {
+    if (document.getElementById) {
+	var thisId = document.getElementById(id);
+	var blocks = document.getElementsByClassName("hidden");
+	for(var i=0; i<blocks.length; i++) {
+            blocks[i].style.display = "none";
+	}
+	thisId.style.display = "block";
+    } 
 }
 </script>
 <!-- Audio origin: http://soundbible.com/1705-Click2.html -->
